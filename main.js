@@ -130,12 +130,13 @@ class AppComponent {
         this.modalService = modalService;
         this.count = 0;
         this.list_item = '';
-        this.arr = [
-        /*{ id: 1, value: 'Lavi', completed: false },
-        { id: 2, value: 'Lokesh', completed: false },
-        { id: 3, value: 'Saket', completed: false },
-        { id: 3, value: 'MK', completed: false },*/
-        ];
+        /*arr: any = [
+          { id: 1, value: 'Lavi', completed: false },
+          { id: 2, value: 'Lokesh', completed: false },
+          { id: 3, value: 'Saket', completed: false },
+          { id: 3, value: 'MK', completed: false },
+        ];*/
+        this.arr = [];
     }
     updateList(v) {
         if (v != '') {
@@ -184,10 +185,10 @@ class AppComponent {
         this.modalRef = this.modalService.show(template);
     }
     ngOnInit() {
-        var getObj = JSON.parse(localStorage.getItem('locArr'));
+        /* var getObj = JSON.parse(localStorage.getItem('locArr'));
         if (getObj != '') {
-            this.arr = getObj;
-        }
+          this.arr = getObj;
+        }*/
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_1__["BsModalService"])); };
