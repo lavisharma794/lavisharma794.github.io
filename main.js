@@ -188,6 +188,7 @@ class AppComponent {
         if (localStorage.getItem('locArr') != null) {
             var getObj = JSON.parse(localStorage.getItem('locArr'));
             this.arr = getObj;
+            this.count = getObj.length;
         }
     }
 }
