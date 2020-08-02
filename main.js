@@ -131,16 +131,21 @@ class AppComponent {
         this.count = 0;
         this.list_item = '';
         this.arr = [
-            {},
+        /*{ id: 1, value: 'Lavi', completed: false },
+        { id: 2, value: 'Lokesh', completed: false },
+        { id: 3, value: 'Saket', completed: false },
+        { id: 3, value: 'MK', completed: false },*/
         ];
     }
     updateList(v) {
-        this.arr.push({
-            id: this.count++,
-            value: v,
-            completed: false,
-        });
-        localStorage.setItem('locArr', JSON.stringify(this.arr));
+        if (v != '') {
+            this.arr.push({
+                id: this.count++,
+                value: v,
+                completed: false,
+            });
+            localStorage.setItem('locArr', JSON.stringify(this.arr));
+        }
         //var getObj = JSON.parse(localStorage.getItem('locArr'));
     }
     strike(v) {
