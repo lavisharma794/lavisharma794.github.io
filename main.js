@@ -137,10 +137,6 @@ class AppComponent {
           { id: 3, value: 'MK', completed: false },
         ];*/
         this.arr = [];
-        var getObj = JSON.parse(localStorage.getItem('locArr'));
-        if (getObj != '') {
-            this.arr = getObj;
-        }
     }
     updateList(v) {
         if (v != '') {
@@ -188,7 +184,12 @@ class AppComponent {
         this.item_id = id;
         this.modalRef = this.modalService.show(template);
     }
-    ngOnInit() { }
+    ngOnInit() {
+        if (localStorage.getItem('locArr') != null) {
+            var getObj = JSON.parse(localStorage.getItem('locArr'));
+            this.arr = getObj;
+        }
+    }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_1__["BsModalService"])); };
 AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 17, vars: 1, consts: [[1, "row"], [1, "col-4"], [1, "text-center", "text-success", 2, "font-size", "1.25rem"], [1, "list-group", "mb-4"], ["class", "list-group-item d-flex justify-content-between align-items-center", 4, "ngFor", "ngForOf"], ["type", "text", "placeholder", "list item name", 1, "form-control", "mr-4", 3, "keyup.enter"], ["f", ""], [1, "btn", "btn-info", "mt-4", "mr-5", 3, "click"], ["template", ""], [1, "list-group-item", "d-flex", "justify-content-between", "align-items-center"], [3, "ngClass", "click"], [1, "btn", "btn-primary", 3, "click"], [1, "ml-3", "btn", "btn-danger", 3, "click"], [1, "modal-header"], [1, "modal-title", "pull-left"], ["type", "button", "aria-label", "Close", 1, "close", "pull-right", 3, "click"], ["aria-hidden", "true"], [1, "modal-body"], ["type", "text", 1, "form-control", 3, "value"], ["nval", ""], [1, "btn", "btn-info", "mt-4", "mr-5", "col-2", "mb-4", "ml-4", 3, "click"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
