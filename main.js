@@ -131,10 +131,7 @@ class AppComponent {
         this.count = 0;
         this.list_item = '';
         this.arr = [
-        /*{ id: 1, value: 'Lavi', completed: false },
-        { id: 2, value: 'Lokesh', completed: false },
-        { id: 3, value: 'Saket', completed: false },
-        { id: 3, value: 'MK', completed: false },*/
+            {},
         ];
     }
     updateList(v) {
